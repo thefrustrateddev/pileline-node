@@ -1,0 +1,24 @@
+{
+    "family": "pipeline-node",
+    "executionRoleArn": "arn:aws:iam::164817814278:role/EC2-SM-role",
+    "networkMode": "awsvpc",
+    "containerDefinitions": [
+        {
+            "name": "test",
+            "image": "164817814278.dkr.ecr.us-east-2.amazonaws.com/test",
+            "portMappings": [
+                {
+                    "containerPort": 3000,
+                    "hostPort": 3000,
+                    "protocol": "tcp"
+                }
+            ],
+            "essential": true
+        }
+    ],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "512",
+    "memory": "1024"
+}
